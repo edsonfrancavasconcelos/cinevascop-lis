@@ -32,7 +32,7 @@ Clone o Repositório:
 
 bash
 Copy code
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clonehttps://github.com/edsonfrancavasconcelos/cinevascopolis/
 Abra o Arquivo HTML:
 Abra o arquivo index.html em um navegador da web.
 
@@ -43,4 +43,4 @@ Licença
 Este projeto está licenciado sob a Licença MIT.
 
 Contato
-Para mais informações ou suporte, entre em contato conosco pelo e-mail contato@cinevascopolis.com ou siga-nos no Twitter @cinevascopolis.
+Para mais informações ou suporte, entre em contato conosco pelo e-mailvascofrancca@icloud.comou siga-nos no Twitter @cinevascopolis.
