@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>CINEVASCÓPOLIS</title>
+</head>
+</head>
+<body>
+ 
+  <div class="container"> 
+    <img src="cinevascopolis.jpg" alt="fotocinema.jpg" >   
+    <div id="output"></div>
+    <div id="options">
+      <h1>CINEVASCÓPOLIS<BR>RESERVE A FILA E POLTRONA
+      </BR></h1>
+      <button onclick="reservar()">Fila</button>
+      <button onclick="exibirPoltronas()">Poltronas</button>
+      <button onclick="sair()">Sair</button>
+    </div>
+  </div>
+
+  <style>
+    body {
+  background-image: url("cinevascopolis.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  height: 100vh;
+ 
+}
+img{
+padding: 20px;
+margin: 20px;
+max-width:100%;
+height: 1500px;
+
+}
+h1{
+  font-size: rem;
+  color: black;
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.535);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.535);
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background-color: #45a049;
+  transition: 1s;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+ 
+}
+
+table, th, td {
+  padding: 20px;
+background: #9fe3a1;
+box-shadow: 1px 2px 5px 5px rgba(0, 0, 0, 0.337);
+border-radius: 20px;
+}
+table, th, td:hover {
+  padding: 20px;
+background: #55f25a;
+box-shadow: 1px 2px 5px 5px rgba(0, 0, 0, 0.337);
+border-radius: 20px;}
+
+th, td {  
+ padding: 20px;
+ margin: 30px;
+ text-align: center;
+}
+
+/* Adicionando a consulta de mídia usando min-width e max-width */
+@media screen and (min-width: 327px) and (max-width: 1024px) {
+  img {
+    height: 100px; /* Tamanho personalizado para telas de 601 a 1024 pixels */
+  }
+
+  h1{
+  font-size: 1rem;
+  color: red;
+}
+  button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  th,
+  td {
+    padding: 10px;
+    margin: 15px;
+  }
+}
+
+  </style>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+    <script>
+        let cinema = new Array(10);
+
+for (let i = 0; i < 10; i++) {
+  cinema[i] = new Array(10).fill("0");
+}
+
+function reservar() {
+  let fila = prompt("Fila:");
+  let poltrona = prompt("Poltrona:");
+
+  if (cinema[fila - 1][poltrona - 1] === "0") {
+    cinema[fila - 1][poltrona - 1] = "X";
+    exibirPoltronas();
+  } else {
+    alert("Poltrona ocupada");
+  }
+}
+
+function exibirPoltronas() {
+  let output = "<table>";
+  for (let i = 0; i < 10; i++) {
+    output += "<tr>";
+    for (let j = 0; j < 10; j++) {
+      output += `<td>${cinema[i][j]}</td>`;
+    }
+    output += "</tr>";
+  }
+  output += "</table>";
+  document.getElementById("output").innerHTML = output;
+}
+
+function sair() {
+  alert("Saindo do programa.");
+  // Você pode adicionar a lógica de saída adicional, se necessário.
+}
+
+    </script>
+</body>
+</html>
